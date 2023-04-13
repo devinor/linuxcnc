@@ -389,9 +389,11 @@ void emcmotCommandHandler(void *arg, long servo_period)
     int abort = 0;
     char* emsg = "";
 
-    if (emcmotCommand->commandNum != emcmotStatus->commandNumEcho) {
-      // if (emcmotCommand->commandNum != emcmotstatus->commandNumEcho && emcmotCommand->head != emcmotCommand->tail)
-      // means has new command and command has been fully copied into sharemem
+    if (emcmotCommand->commandNum == emcmotStatus->commandNumEcho) {
+      // if (emcmotCommand->commandNum == emcmotstatus->commandNumEcho) 
+      // means has no new command, no need to execute
+      // if (emcmotCommand->commandNum != emcmotstatus->commandNumEcho) 
+      // means has new command, wil check the complete of the new command
       return;
     }
 	
