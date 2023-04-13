@@ -391,7 +391,7 @@ void emcmotCommandHandler(void *arg, long servo_period)
 
     if (emcmotCommand->commandNum == emcmotStatus->commandNumEcho) {
       // if (emcmotCommand->commandNum == emcmotstatus->commandNumEcho) 
-      // means has no new command, no need to execute
+      // means has no new command, not need to execute
       // if (emcmotCommand->commandNum != emcmotstatus->commandNumEcho) 
       // means has new command, wil check the complete of the new command
       return;
